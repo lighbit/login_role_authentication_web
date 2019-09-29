@@ -20,38 +20,39 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	@Qualifier("customUserDetailsService")
 	UserDetailsService userDetailsService;
-	
-	
+
 	@Autowired
 	public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService);
 		auth.authenticationProvider(authenticationProvider());
 	}
-	
-	
+
+	@Autowired
+	private LoggingAccessDeniedHandler accessDeniedHandler;
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
-	    return new BCryptPasswordEncoder();
+		return new BCryptPasswordEncoder();
 	}
-	
-	
+
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
-	    DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-	    authenticationProvider.setUserDetailsService(userDetailsService);
-	    authenticationProvider.setPasswordEncoder(passwordEncoder());
-	    return authenticationProvider;
+		DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+		authenticationProvider.setUserDetailsService(userDetailsService);
+		authenticationProvider.setPasswordEncoder(passwordEncoder());
+		return authenticationProvider;
 	}
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-	  http.authorizeRequests()
-	  	.antMatchers("/", "/home").permitAll()
-	  	.antMatchers("/admin/**","/newuser").access("hasRole('ADMIN')")
-	  	.antMatchers("/db/**").access("hasRole('ADMIN') and hasRole('DBA')")
-	  	.and().formLogin().loginPage("/logins")
-	  	.usernameParameter("ssoId").passwordParameter("password")
-	  	.and().csrf()
-	  	.and().exceptionHandling().accessDeniedPage("/Access_Denied");
+		http.authorizeRequests().antMatchers("/", "/home").access("hasRole('ADMIN')")
+				.antMatchers("/admin/**", "/newuser").access("hasRole('ADMIN')").antMatchers("/db/**")
+				.access("hasRole('ADMIN') and hasRole('DBA')").and().formLogin().loginPage("/login")
+				.usernameParameter("ssoId").passwordParameter("password").and().csrf().and().exceptionHandling()
+				.accessDeniedPage("/Access_Denied");
+
+		http.formLogin().failureUrl("/login?error").defaultSuccessUrl("/home").loginPage("/login").and().exceptionHandling()
+				.accessDeniedHandler(accessDeniedHandler);
+
 	}
 }
