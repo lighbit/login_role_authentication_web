@@ -49,6 +49,10 @@
 	href="<c:url value='/static/vendor/fontawesome-free/css/all.min.css' />"
 	rel="stylesheet" type="text/css"></link>
 
+<!-- ICON -->
+<link href="<c:url value='/static/icon/apple-touch-icon-114-precomposed.png' />" rel="icon"
+	type="text/css"></link>
+
 </head>
 
 <body id="page-top">

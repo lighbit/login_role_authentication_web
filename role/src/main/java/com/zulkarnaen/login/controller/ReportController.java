@@ -48,10 +48,10 @@ public class ReportController {
 		return "redirect:/login?logout";
 	}
 
-	@RequestMapping(value = "/layout", method = RequestMethod.GET)
+	@RequestMapping(value = "/dashboard", method = RequestMethod.GET)
 	public String layout(Model model) {
 
-		return "layout";
+		return "index";
 
 	}
 

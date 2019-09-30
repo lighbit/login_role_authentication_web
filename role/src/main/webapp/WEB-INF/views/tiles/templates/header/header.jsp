@@ -5,7 +5,7 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-	<a class="navbar-brand mr-1" href="${pageContext.request.contextPath}/">Report
+	<a class="navbar-brand mr-1" href="${pageContext.request.contextPath}/dashboard">Report
 		Bank Riau Kepri</a>
 
 	<button class="btn btn-link btn-sm text-white order-1 order-sm-0"

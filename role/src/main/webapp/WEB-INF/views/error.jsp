@@ -5,7 +5,7 @@
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
 	<li class="breadcrumb-item"><a
-		href="${pageContext.request.contextPath}/">Dashboard</a></li>
+		href="${pageContext.request.contextPath}/dashboard">Dashboard</a></li>
 	<li class="breadcrumb-item active">404 Error</li>
 </ol>
 

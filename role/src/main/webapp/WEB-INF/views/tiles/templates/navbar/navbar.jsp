@@ -5,6 +5,10 @@
 
 <ul class="sidebar navbar-nav">
 	<li class="nav-item"><a class="nav-link"
+		href="${pageContext.request.contextPath}/dashboard"> <i
+			class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span>
+	</a></li>
+	<li class="nav-item"><a class="nav-link"
 		href="${pageContext.request.contextPath}/form1"> <i
 			class="fas fa-fw fa-table"></i> <span>Report Form1</span>
 	</a></li>

@@ -5,6 +5,6 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-	<a class="navbar-brand mr-1" href="${pageContext.request.contextPath}/">Report
+	<a class="navbar-brand mr-1" href="${pageContext.request.contextPath}/login">Report
 		Bank Riau Kepri</a>
 </nav>
