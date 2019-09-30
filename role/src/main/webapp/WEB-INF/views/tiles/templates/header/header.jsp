@@ -26,7 +26,7 @@
 				<!-- <a class="dropdown-item">HaLLo</a>
 				<div class="dropdown-divider"></div>-->
 				<a class="dropdown-item" href="<c:url value="/logout" />"
-					data-toggle="modal" data-target="#logoutModal">Logout</a>
+					data-toggle="modal" data-target="#logoutModal">Log out</a>
 			</div></li>
 	</ul>
 </nav>

@@ -9,32 +9,32 @@
 		<form action="${loginUrl}" method="post">
 			<c:if test="${param.error != null}">
 				<div class="alert alert-danger">
-					<p>Invalid username and password.</p>
+					<p>Username atau Password Salah.</p>
 				</div>
 			</c:if>
 			<c:if test="${param.logout != null}">
 				<div class="alert alert-success">
-					<p>You have been logged out successfully.</p>
+					<p>Kamu Berhasil Logout.</p>
 				</div>
 			</c:if>
 
 			<div class="form-group">
 				<div class="form-label-group">
-					<input type="text" id="inputEmail" class="form-control"
-						placeholder="Email address" required="required"
-						autofocus="autofocus"> <label for="inputEmail">Username</label>
+					<input type="text" class="form-control" placeholder="Email address"
+						required="required" autofocus="autofocus" id="username"
+						name="ssoId"> <label for="inputEmail">Username</label>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="form-label-group">
-					<input type="password" id="inputPassword" class="form-control"
-						placeholder="Password" required="required"> <label
+					<input type="password" class="form-control" placeholder="Password"
+						required="required" id="password" name="password"> <label
 						for="inputPassword">Password</label>
 				</div>
 				<input type="hidden" name="${_csrf.parameterName}"
 					value="${_csrf.token}" />
 			</div>
-			<input class="btn btn-primary btn-block" type="submit" value="LOGIN">
+			<input class="btn btn-primary btn-block" type="submit" value="LOG IN">
 		</form>
 	</div>
 </div>
