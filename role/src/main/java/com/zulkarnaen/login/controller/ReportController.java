@@ -219,7 +219,7 @@ public class ReportController {
 		List<Form2Model> form2aModels = reportService.provideForm2aData(startDate, endDate);
 		model.addAttribute("models", form2aModels);
 		model.addAttribute("searchform", new SearchModel());
-		return "form2a";
+		return "form2";
 
 	}
 
@@ -231,7 +231,7 @@ public class ReportController {
 		List<Form2Model> form2aModels = reportService.provideForm2aData(startDate, endDate);
 		model.addAttribute("models", form2aModels);
 		model.addAttribute("searchform", searchform);
-		return "form2a";
+		return "form2";
 
 	}
 
@@ -247,7 +247,7 @@ public class ReportController {
 		List<form4ModelOut> form4Models = reportService.provideForm4aData(startDate, endDate);
 		model.addAttribute("models", form4Models);
 		model.addAttribute("searchform", new SearchModel());
-		return "form4a";
+		return "form4";
 
 	}
 
@@ -259,7 +259,7 @@ public class ReportController {
 		List<form4ModelOut> form4Models = reportService.provideForm4aData(startDate, endDate);
 		model.addAttribute("models", form4Models);
 		model.addAttribute("searchform", searchform);
-		return "form4a";
+		return "form4";
 	}
 
 //=================================================================================================================

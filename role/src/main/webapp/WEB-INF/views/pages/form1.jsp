@@ -67,10 +67,10 @@
 					</tr>
 				</tfoot>
 				<tbody>
-					<c:forEach items="${models}" var="form1">
+					<c:forEach items="${models}" var="form1" varStatus="number">
 						<!-- 20 total -->
 						<tr>
-							<td>${fn:escapeXml(index.count)}</td>
+							<td>${number.count}</td>
 							<td>${fn:escapeXml(form1.sandiBank)}</td>
 							<td>${fn:escapeXml(form1.agentName)}</td>
 							<td>${fn:escapeXml(form1.agentNo)}</td>
@@ -96,6 +96,6 @@
 			</table>
 		</div>
 	</div>
-	<div class="card-footer small text-muted">Updated yesterday at
-		11:59 PM</div>
+	<!-- <div class="card-footer small text-muted">Updated yesterday at
+		11:59 PM</div>  -->
 </div>

@@ -5,8 +5,20 @@
 
 <ul class="sidebar navbar-nav">
 	<li class="nav-item"><a class="nav-link"
-		href="${pageContext.request.contextPath}/"> <i
+		href="${pageContext.request.contextPath}/form1"> <i
 			class="fas fa-fw fa-table"></i> <span>Report Form1</span>
+	</a></li>
+	<li class="nav-item"><a class="nav-link"
+		href="${pageContext.request.contextPath}/form2a"> <i
+			class="fas fa-fw fa-table"></i> <span>Report Form2</span>
+	</a></li>
+	<li class="nav-item"><a class="nav-link"
+		href="${pageContext.request.contextPath}/form4a"> <i
+			class="fas fa-fw fa-table"></i> <span>Report Form4</span>
+	</a></li>
+	<li class="nav-item"><a class="nav-link"
+		href="${pageContext.request.contextPath}/form9"> <i
+			class="fas fa-fw fa-table"></i> <span>Report Form9</span>
 	</a></li>
 	<!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
 		href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
