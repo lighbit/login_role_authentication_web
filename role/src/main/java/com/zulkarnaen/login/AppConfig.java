@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.zulkarnaen.login")
-public class HelloWorldConfiguration extends WebMvcConfigurerAdapter {
+public class AppConfig extends WebMvcConfigurerAdapter {
 
 	@Autowired
 	RoleToUserProfileConverter roleToUserProfileConverter;

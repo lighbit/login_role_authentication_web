@@ -13,7 +13,7 @@
        <put-attribute name="footer" value="/WEB-INF/views/tiles/templates/footer/footer.jsp" />  
    </definition>  
    
-   <!-- Base Definition -->
+   <!-- Base Definition For Login-->
    <definition name="login-base"
        template="/WEB-INF/views/tiles/layouts/defaultlayout.jsp">  
        <put-attribute name="title" value="" />  
@@ -29,22 +29,34 @@
        <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />  
    </definition>  
   
-   <!-- Home Page -->
+   <!-- Form1 Page -->
    <definition name="form1" extends="base-definition">  
-       <put-attribute name="title" value="Form1" />  
+       <put-attribute name="title" value="Form 1" />  
        <put-attribute name="body" value="/WEB-INF/views/pages/form1.jsp" />  
+   </definition>  
+   
+   <!-- Form2 page -->
+   <definition name="form2" extends="base-definition">  
+       <put-attribute name="title" value="Form 2" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/form2.jsp" />  
+   </definition>  
+   
+   <!-- Form4 page -->
+   <definition name="form4" extends="base-definition">  
+       <put-attribute name="title" value="Form 4" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/form4.jsp" />  
+   </definition>  
+   
+   <!-- Form9 page -->
+   <definition name="form9" extends="base-definition">  
+       <put-attribute name="title" value="Form 9" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/form9.jsp" />  
    </definition>  
  
    <!-- TEST -->
    <definition name="index" extends="base-definition">  
-       <put-attribute name="title" value="Ini Contoh" />  
+       <put-attribute name="title" value="Example Table" />  
        <put-attribute name="body" value="/index.jsp" />  
-   </definition>  
-       
-   <!-- Contact-us Page -->
-   <definition name="contactus" extends="base-definition">  
-       <put-attribute name="title" value="Contact Us" />  
-       <put-attribute name="body" value="/WEB-INF/views/pages/contactus.jsp" />  
    </definition>  
   
 </tiles-definitions>
