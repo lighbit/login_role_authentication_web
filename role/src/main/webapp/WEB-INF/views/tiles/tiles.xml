@@ -34,6 +34,13 @@
 			value="/WEB-INF/views/pages/login.jsp" />
 	</definition>
 
+	<!-- Error Page -->
+	<definition name="error" extends="base-definition">
+		<put-attribute name="title" value="Sorry :(" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/error.jsp" />
+	</definition>
+
 	<!-- Form1 Page -->
 	<definition name="form1" extends="base-definition">
 		<put-attribute name="title" value="Form 1" />

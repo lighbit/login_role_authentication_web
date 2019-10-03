@@ -13,6 +13,6 @@
 <h1 class="display-1">SORRY :(</h1>
 <p class="lead">
 	Page not found. You can <a href="javascript:history.back()">go back</a>
-	to the previous page, or <a href="${pageContext.request.contextPath}/">return
+	to the previous page, or <a href="${pageContext.request.contextPath}/dashboard">return
 		home</a>.
 </p>

@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.zulkarnaen.login.model.AgentHistoryModel;
 import com.zulkarnaen.login.model.AgentModel;
@@ -26,6 +27,7 @@ import com.zulkarnaen.login.model.Form2Model;
 import com.zulkarnaen.login.model.Form9Model;
 import com.zulkarnaen.login.model.TransactionModel;
 import com.zulkarnaen.login.model.form4ModelOut;
+import com.zulkarnaen.login.requirement.Util;
 import com.zulkarnaen.login.service.ReportService;
 
 @Controller
@@ -52,6 +54,13 @@ public class ReportController {
 	public String layout(Model model) {
 
 		return "index";
+
+	}
+
+	@RequestMapping(value = "/error", method = RequestMethod.GET)
+	public String error(Model model) {
+
+		return "error";
 
 	}
 
@@ -196,13 +205,14 @@ public class ReportController {
 	}
 
 	@RequestMapping(value = "/searchForm1", method = RequestMethod.POST)
-	public String formSearchForm1(Model model, @ModelAttribute("searchform") SearchModel searchform) {
+	public String formSearchForm1(Model model, @RequestParam(required = false, value = "date") String awalDate,
+			@RequestParam(required = false, value = "endDate") String akhirDate) {
 
-		Date endDate = searchform.getEndDate();
-		Date startDate = searchform.getStartDate();
+		Date startDate = Util.formatDateTime(awalDate);
+		Date endDate = Util.formatDateTime(akhirDate);
+
 		List<Form1Model> form1Models = reportService.provideForm1Data(startDate, endDate);
 		model.addAttribute("models", form1Models);
-		model.addAttribute("searchform", searchform);
 		return "form1";
 
 	}
@@ -224,13 +234,14 @@ public class ReportController {
 	}
 
 	@RequestMapping(value = "/searchForm2a", method = RequestMethod.POST)
-	public String formSearchForm2a(Model model, @ModelAttribute("searchform") SearchModel searchform) {
+	public String formSearchForm2a(Model model, @RequestParam(required = false, value = "date") String awalDate,
+			@RequestParam(required = false, value = "endDate") String akhirDate) {
 
-		Date endDate = searchform.getEndDate();
-		Date startDate = searchform.getStartDate();
+		Date startDate = Util.formatDateTime(awalDate);
+		Date endDate = Util.formatDateTime(akhirDate);
+
 		List<Form2Model> form2aModels = reportService.provideForm2aData(startDate, endDate);
 		model.addAttribute("models", form2aModels);
-		model.addAttribute("searchform", searchform);
 		return "form2";
 
 	}
@@ -252,13 +263,14 @@ public class ReportController {
 	}
 
 	@RequestMapping(value = "/searchForm4", method = RequestMethod.POST)
-	public String formSearchForm4(Model model, @ModelAttribute("searchform") SearchModel searchform) {
+	public String formSearchForm4(Model model, @RequestParam(required = false, value = "date") String awalDate,
+			@RequestParam(required = false, value = "endDate") String akhirDate) {
 
-		Date endDate = searchform.getEndDate();
-		Date startDate = searchform.getStartDate();
+		Date startDate = Util.formatDateTime(awalDate);
+		Date endDate = Util.formatDateTime(akhirDate);
+
 		List<form4ModelOut> form4Models = reportService.provideForm4aData(startDate, endDate);
 		model.addAttribute("models", form4Models);
-		model.addAttribute("searchform", searchform);
 		return "form4";
 	}
 
@@ -279,13 +291,14 @@ public class ReportController {
 	}
 
 	@RequestMapping(value = "/searchForm9", method = RequestMethod.POST)
-	public String formSearchForm9(Model model, @ModelAttribute("searchform") SearchModel searchform) {
+	public String formSearchForm9(Model model, @RequestParam(required = false, value = "date") String awalDate,
+			@RequestParam(required = false, value = "endDate") String akhirDate) {
 
-		Date endDate = searchform.getEndDate();
-		Date startDate = searchform.getStartDate();
+		Date startDate = Util.formatDateTime(awalDate);
+		Date endDate = Util.formatDateTime(akhirDate);
+		
 		List<Form9Model> form9Models = reportService.provideForm9Data(startDate, endDate);
 		model.addAttribute("models", form9Models);
-		model.addAttribute("searchform", searchform);
 		return "form9";
 	}
 

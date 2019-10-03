@@ -8,6 +8,62 @@
 		href="${pageContext.request.contextPath}/dashboard">Home</a></li>
 	<li class="breadcrumb-item active">Form 1 Data</li>
 </ol>
+<c:url var="loginUrl" value="/searchForm1" />
+<form action="${loginUrl}" method="post">
+	<div class="row">
+		<div class='col-sm-3'>
+			<div class="form-group">
+				<div class='input-append date' id='datetimepicker6'>
+					<input data-format="yyyy-MM-dd" type='text'
+						class="form-control" name="date" value="${fn:escapeXml(date)}"
+						placeholder="start" readonly /> <span class="add-on"> <i
+						class="icon-th"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class='col-sm-3'>
+			<div class="form-group">
+				<div class='input-append date' id='datetimepicker7'>
+					<input data-format="yyyy-MM-dd" type='text'
+						class="form-control" name="endDate"
+						value="${fn:escapeXml(endDate)}" placeholder="end" readonly /> <span
+						class="add-on"> <i class="icon-th"></i>
+					</span>
+				</div>
+
+			</div>
+		</div>
+		<div class='col-sm-3'>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary" name="search"
+					id="search">Cari</button>
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
+
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				$('#datetimepicker6').datetimepicker({
+					maskInput : false
+				});
+			});
+
+			$(function() {
+				$('#datetimepicker7').datetimepicker({
+					maskInput : false
+				});
+			});
+
+			$(function() {
+				$(document).on("click", "#search", function() {
+					document.getElementById('current').value = 0;
+				});
+			});
+		</script>
+	</div>
+</form>
 
 <!-- DataTables Example -->
 <div class="card mb-3">
@@ -37,9 +93,6 @@
 						<th>Agent Status</th>
 						<th>Jenis Agent</th>
 						<th>Klasifikasi Agent</th>
-						<th>Jenis Usaha Agent</th>
-						<th>Kategori Jaringan Kantor</th>
-						<th>Status Perkembangan Agen</th>
 					</tr>
 				</thead>
 				<tfoot>
@@ -61,9 +114,6 @@
 						<th>Agent Status</th>
 						<th>Jenis Agent</th>
 						<th>Klasifikasi Agent</th>
-						<th>Jenis Usaha Agent</th>
-						<th>Kategori Jaringan Kantor</th>
-						<th>Status Perkembangan Agen</th>
 					</tr>
 				</tfoot>
 				<tbody>
@@ -87,9 +137,6 @@
 							<td>${fn:escapeXml(form1.statusAgent)}</td>
 							<td>${fn:escapeXml(form1.jenisAgent)}</td>
 							<td>${fn:escapeXml(form1.klasifikasiAgent)}</td>
-							<td>${fn:escapeXml(form1.jenisUsahaAgent)}</td>
-							<td>${fn:escapeXml(form1.kategoriJaringanKantor)}</td>
-							<td>${fn:escapeXml(form1.statusPerkembanganAgent)}</td>
 						</tr>
 					</c:forEach>
 				</tbody>
