@@ -7,10 +7,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.zulkarnaen.login.model.AgentHistoryModel;
 import com.zulkarnaen.login.model.AgentModel;
@@ -24,7 +23,7 @@ import com.zulkarnaen.login.model.form4ModelOut;
 import com.zulkarnaen.login.repository.ReportRepository;
 
 @Service("reportService")
-@Transactional
+@Transactional(readOnly = true)
 public class ReportServiceImpl implements ReportService {
 
 	@Autowired
@@ -193,6 +192,7 @@ public class ReportServiceImpl implements ReportService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<Form1Model> provideForm1Data(Date startDate, Date endDate) {
 
 		String dateStart = formatDateStart(startDate);

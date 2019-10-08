@@ -1,16 +1,15 @@
 package com.zulkarnaen.login.service;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.zulkarnaen.login.model.User;
 import com.zulkarnaen.login.repository.UserDao;
 
 @Service("userService")
-@Transactional
+@Transactional(readOnly = true)
 public class UserServiceImpl implements UserService {
 
 	@Autowired

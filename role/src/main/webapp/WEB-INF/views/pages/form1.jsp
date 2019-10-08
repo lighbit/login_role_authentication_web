@@ -14,10 +14,9 @@
 		<div class='col-sm-3'>
 			<div class="form-group">
 				<div class='input-append date' id='datetimepicker6'>
-					<input data-format="yyyy-MM-dd" type='text'
-						class="form-control" name="date" value="${fn:escapeXml(date)}"
-						placeholder="start" readonly /> <span class="add-on"> <i
-						class="icon-th"></i>
+					<input data-format="yyyy-MM-dd" type='text' class="form-control"
+						name="date" value="${fn:escapeXml(date)}" placeholder="start"
+						readonly /> <span class="add-on"> <i class="icon-th"></i>
 					</span>
 				</div>
 			</div>
@@ -25,10 +24,9 @@
 		<div class='col-sm-3'>
 			<div class="form-group">
 				<div class='input-append date' id='datetimepicker7'>
-					<input data-format="yyyy-MM-dd" type='text'
-						class="form-control" name="endDate"
-						value="${fn:escapeXml(endDate)}" placeholder="end" readonly /> <span
-						class="add-on"> <i class="icon-th"></i>
+					<input data-format="yyyy-MM-dd" type='text' class="form-control"
+						name="endDate" value="${fn:escapeXml(endDate)}" placeholder="end"
+						readonly /> <span class="add-on"> <i class="icon-th"></i>
 					</span>
 				</div>
 
@@ -46,13 +44,17 @@
 		<script type="text/javascript">
 			$(function() {
 				$('#datetimepicker6').datetimepicker({
-					maskInput : false
+					maskInput : false,
+					todayHighlight:'TRUE',
+				    autoclose: true
 				});
 			});
 
 			$(function() {
 				$('#datetimepicker7').datetimepicker({
-					maskInput : false
+					maskInput : false,
+					todayHighlight:'TRUE',
+				    autoclose: true
 				});
 			});
 
@@ -72,8 +74,7 @@
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
-			<table class="table table-bordered" id="dataTable" width="100%"
-				cellspacing="0">
+			<table class="table table-bordered" id="dataTable">
 				<thead>
 					<tr>
 						<th>No</th>

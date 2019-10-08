@@ -45,13 +45,17 @@
 		<script type="text/javascript">
 			$(function() {
 				$('#datetimepicker6').datetimepicker({
-					maskInput : false
+					maskInput : false,
+					todayHighlight:'TRUE',
+				    autoclose: true
 				});
 			});
 
 			$(function() {
 				$('#datetimepicker7').datetimepicker({
-					maskInput : false
+					maskInput : false,
+					todayHighlight:'TRUE',
+				    autoclose: true
 				});
 			});
 
@@ -71,8 +75,7 @@
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
-			<table class="table table-bordered" id="dataTable" width="100%"
-				cellspacing="0">
+			<table class="table table-bordered" id="dataTable">
 				<thead>
 					<tr>
 						<th>No</th>
