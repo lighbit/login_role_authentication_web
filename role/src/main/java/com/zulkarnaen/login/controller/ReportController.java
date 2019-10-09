@@ -36,11 +36,21 @@ public class ReportController {
 	@Autowired
 	ReportService reportService;
 
+	/**
+	 * 
+	 * @return
+	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
 		return "login";
 	}
 
+	/**
+	 * 
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -50,6 +60,11 @@ public class ReportController {
 		return "redirect:/login?logout";
 	}
 
+	/**
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/dashboard", method = RequestMethod.GET)
 	public String layout(Model model) {
 
@@ -57,6 +72,11 @@ public class ReportController {
 
 	}
 
+	/**
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/error", method = RequestMethod.GET)
 	public String error(Model model) {
 
@@ -67,6 +87,11 @@ public class ReportController {
 //=================================================================================================================
 
 	// TODO AGEN BY DATE
+	/**
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/agentData", method = RequestMethod.GET)
 	public String formSearchAgent(Model model) {
 
@@ -83,6 +108,12 @@ public class ReportController {
 	}
 
 	// TODO AGEN BY DATE
+	/**
+	 * 
+	 * @param model
+	 * @param searchform
+	 * @return
+	 */
 	@RequestMapping(value = "/searchAgent", method = RequestMethod.POST)
 	public String formSearchAgent(Model model, @ModelAttribute("searchform") SearchModel searchform) {
 
@@ -101,6 +132,11 @@ public class ReportController {
 //=================================================================================================================
 
 	// TODO CUSTOMER BY DATE
+	/**
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/customer", method = RequestMethod.GET)
 	public String formSearchCustomer(Model model) {
 
@@ -116,6 +152,12 @@ public class ReportController {
 	}
 
 	// TODO CUSTOMER BY DATE
+	/**
+	 * 
+	 * @param model
+	 * @param searchform
+	 * @return
+	 */
 	@RequestMapping(value = "/searchCustomer", method = RequestMethod.POST)
 	public String formSearchCustomer(Model model, @ModelAttribute("searchform") SearchModel searchform) {
 
@@ -130,6 +172,11 @@ public class ReportController {
 //=================================================================================================================		
 
 	// TODO TRANSACTION BY DATE
+	/**
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/transaction", method = RequestMethod.GET)
 	public String formSearchTransaction(Model model) {
 
@@ -145,6 +192,12 @@ public class ReportController {
 	}
 
 	// TODO TRANSACTION BY DATE
+	/**
+	 * 
+	 * @param model
+	 * @param searchform
+	 * @return
+	 */
 	@RequestMapping(value = "/searchTransaction", method = RequestMethod.POST)
 	public String formSearchTransaction(Model model, @ModelAttribute("searchform") SearchModel searchform) {
 
@@ -160,6 +213,11 @@ public class ReportController {
 //=================================================================================================================
 
 	// TODO PERUBAHAN DATA AGENT
+	/**
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/agentHistory", method = RequestMethod.GET)
 	public String formSearchAgentHistory(Model model) {
 
@@ -175,6 +233,12 @@ public class ReportController {
 	}
 
 	// TODO PERUBAHAN DATA AGENT
+	/**
+	 * 
+	 * @param model
+	 * @param searchform
+	 * @return
+	 */
 	@RequestMapping(value = "/searchAgentHistory", method = RequestMethod.POST)
 	public String formSearchAgentHistory(Model model, @ModelAttribute("searchform") SearchModel searchform) {
 
@@ -190,6 +254,11 @@ public class ReportController {
 //=================================================================================================================
 
 	// TODO form 1
+	/**
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/form1", method = RequestMethod.GET)
 	public String formSearchForm1(Model model) {
 
@@ -204,6 +273,13 @@ public class ReportController {
 
 	}
 
+	/**
+	 * 
+	 * @param model
+	 * @param awalDate
+	 * @param akhirDate
+	 * @return
+	 */
 	@RequestMapping(value = "/searchForm1", method = RequestMethod.POST)
 	public String formSearchForm1(Model model, @RequestParam(required = false, value = "date") String awalDate,
 			@RequestParam(required = false, value = "endDate") String akhirDate) {
@@ -219,6 +295,11 @@ public class ReportController {
 
 //=================================================================================================================
 
+	/**
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/form2a", method = RequestMethod.GET)
 	public String formSearchForm2a(Model model) {
 
@@ -233,6 +314,13 @@ public class ReportController {
 
 	}
 
+	/**
+	 * 
+	 * @param model
+	 * @param awalDate
+	 * @param akhirDate
+	 * @return
+	 */
 	@RequestMapping(value = "/searchForm2a", method = RequestMethod.POST)
 	public String formSearchForm2a(Model model, @RequestParam(required = false, value = "date") String awalDate,
 			@RequestParam(required = false, value = "endDate") String akhirDate) {
@@ -248,6 +336,11 @@ public class ReportController {
 
 	// =================================================================================================================
 
+	/**
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/form4a", method = RequestMethod.GET)
 	public String formSearchForm4(Model model) {
 
@@ -262,6 +355,13 @@ public class ReportController {
 
 	}
 
+	/**
+	 * 
+	 * @param model
+	 * @param awalDate
+	 * @param akhirDate
+	 * @return
+	 */
 	@RequestMapping(value = "/searchForm4", method = RequestMethod.POST)
 	public String formSearchForm4(Model model, @RequestParam(required = false, value = "date") String awalDate,
 			@RequestParam(required = false, value = "endDate") String akhirDate) {
@@ -276,6 +376,11 @@ public class ReportController {
 
 //=================================================================================================================
 
+	/**
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/form9", method = RequestMethod.GET)
 	public String formSearchForm9(Model model) {
 
@@ -290,6 +395,13 @@ public class ReportController {
 
 	}
 
+	/**
+	 * 
+	 * @param model
+	 * @param awalDate
+	 * @param akhirDate
+	 * @return
+	 */
 	@RequestMapping(value = "/searchForm9", method = RequestMethod.POST)
 	public String formSearchForm9(Model model, @RequestParam(required = false, value = "date") String awalDate,
 			@RequestParam(required = false, value = "endDate") String akhirDate) {
@@ -300,6 +412,11 @@ public class ReportController {
 		List<Form9Model> form9Models = reportService.provideForm9Data(startDate, endDate);
 		model.addAttribute("models", form9Models);
 		return "form9";
+	}
+	
+	@RequestMapping(value = "/reportexcel")
+	public void downloadExcel(HttpServletRequest request, HttpServletResponse response) {
+		
 	}
 
 }

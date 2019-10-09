@@ -46,22 +46,37 @@
 			$(function() {
 				$('#datetimepicker6').datetimepicker({
 					maskInput : false,
-					todayHighlight:'TRUE',
-				    autoclose: true
+					todayHighlight : 'TRUE',
+					autoclose : true
 				});
 			});
 
 			$(function() {
 				$('#datetimepicker7').datetimepicker({
 					maskInput : false,
-					todayHighlight:'TRUE',
-				    autoclose: true
+					todayHighlight : 'TRUE',
+					autoclose : true
 				});
 			});
 
 			$(function() {
 				$(document).on("click", "#search", function() {
 					document.getElementById('current').value = 0;
+				});
+			});
+
+			$(document).ready(function() {
+				$('#example').DataTable({
+					dom : 'Bfrtip',
+					buttons : [ {
+						extend : 'excelHtml5',
+						title : 'Data export Bank Riau Kepri Form9'
+					}, {
+						extend : 'pdfHtml5',
+						title : 'Data export Bank Riau Kepri Form9',
+						orientation: 'landscape',
+		                pageSize: 'LEGAL'
+					} ]
 				});
 			});
 		</script>
@@ -71,11 +86,12 @@
 <!-- DataTables Example -->
 <div class="card mb-3">
 	<div class="card-header">
-		<i class="fas fa-table"></i> Data Table Example
+		<i class="fas fa-table"></i> Data Table Form9
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
-			<table class="table table-bordered" id="dataTable">
+			<table id="example" class="table table-striped table-bordered"
+				style="width: 100%">
 				<thead>
 					<tr>
 						<th>No</th>
